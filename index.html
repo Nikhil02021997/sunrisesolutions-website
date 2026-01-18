@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrise Solutions | Recruitment Partner</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container nav">
+
+    <div class="logo">
+      <img src="images/logo/logo.png" alt="Sunrise Solutions">
+      <span>Sunrise Solutions</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" id="loginBtn">Login</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= HERO SLIDER ================= -->
+<section class="hero-slider">
+
+  <div class="slide active">
+    <div class="container hero-content">
+      <h1>Your Trusted Partner in Recruitment</h1>
+      <p>Ethical, reliable, and customized recruitment solutions across industries.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="container hero-content">
+      <h1>Right Talent. Right Role.</h1>
+      <p>Helping organizations build strong teams through long-term hiring partnerships.</p>
+      <a href="services.html" class="btn-primary">Our Services</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="container hero-content">
+      <h1>30+ Years of HR Expertise</h1>
+      <p>Led by senior HR professionals delivering trusted recruitment outcomes.</p>
+      <a href="about.html" class="btn-primary">About Us</a>
+    </div>
+  </div>
+
+  <button class="slider-btn prev">‹</button>
+  <button class="slider-btn next">›</button>
+
+</section>
+
+<!-- ================= CLIENT LOGOS ================= -->
+<section class="section section-mid">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:40px;">
+      Trusted by Leading Organizations
+    </h2>
+
+    <div class="logo-slider">
+      <div class="logo-track">
+
+        <img src="images/clients/aip.png" alt="AIP">
+        <img src="images/clients/Biomed.png" alt="Biomed">
+        <img src="images/clients/century.png" alt="Century">
+        <img src="images/clients/hmd best logo.png" alt="HMD">
+        <img src="images/clients/INDIAGLYCO.NS-725610ea.png" alt="India Glyco">
+        <img src="images/clients/KAIZEN FINAL LOGO big.png" alt="Kaizen">
+        <img src="images/clients/markexhaust.png" alt="Mark Exhaust">
+        <img src="images/clients/spark engineers.png" alt="Spark Engineers">
+        <img src="images/clients/starwire.png" alt="Star Wire">
+        <img src="images/clients/vidhyut control.png" alt="Vidhyut Control">
+        <img src="images/clients/yachiyo.png" alt="Yachiyo">
+        <img src="images/clients/yutaka.png" alt="Yutaka">
+
+        <!-- Duplicate for infinite loop -->
+        <img src="images/clients/aip.png">
+        <img src="images/clients/Biomed.png">
+        <img src="images/clients/century.png">
+        <img src="images/clients/hmd best logo.png">
+        <img src="images/clients/INDIAGLYCO.NS-725610ea.png">
+        <img src="images/clients/KAIZEN FINAL LOGO big.png">
+        <img src="images/clients/markexhaust.png">
+        <img src="images/clients/starwire.png">
+        <img src="images/clients/yachiyo.png">
+        <img src="images/clients/yutaka.png">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOGIN MODAL ================= -->
+<div id="loginModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:2000;">
+  <div class="container" style="max-width:420px; margin:120px auto;">
+    <div class="card" style="text-align:center;">
+
+      <h2>Candidate Login</h2>
+      <p style="margin-bottom:20px;">
+        Login with your details to submit your resume.
+      </p>
+
+      <!-- ✅ Full Name + Mobile Number -->
+      <form id="loginForm">
+
+        <input
+          id="fullName"
+          type="text"
+          placeholder="Full Name"
+          required
+          style="margin-bottom:12px;"
+        >
+
+        <input
+          id="mobileNumber"
+          type="tel"
+          placeholder="Mobile Number"
+          required
+        >
+
+        <button type="submit" class="btn-secondary" style="margin-top:20px; width:100%;">
+          Continue
+        </button>
+
+      </form>
+
+      <p style="font-size:13px; margin-top:12px; opacity:0.8;">
+        Your details are safe and used only for recruitment.
+      </p>
+
+      <button
+        id="closeLogin"
+        style="margin-top:10px; background:none; color:#c7cbe3; border:none; cursor:pointer;"
+      >
+        Close
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= JS ================= -->
+<script src="js/main.js"></script>
+
+<script>
+  const loginBtn = document.getElementById("loginBtn");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+
+  loginBtn.addEventListener("click", e => {
+    e.preventDefault();
+    loginModal.style.display = "block";
+  });
+
+  closeLogin.addEventListener("click", () => {
+    loginModal.style.display = "none";
+  });
+</script>
+
+</body>
+</html>

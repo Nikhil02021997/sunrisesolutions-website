@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candidate Dashboard | Sunrise Solutions</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <img src="images/logo/logo.png" alt="Sunrise Solutions">
+      <span>Sunrise Solutions</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= DASHBOARD ================= -->
+<section class="section section-soft">
+  <div class="container" style="max-width:700px;">
+
+    <h2 id="welcomeText">Welcome</h2>
+    <p style="margin-bottom:30px;">
+      Upload your resume. Our recruitment team will review it and contact you.
+    </p>
+
+    <!-- ================= RESUME UPLOAD ================= -->
+    <div class="card">
+      <h3>Upload Your Resume</h3>
+
+      <form id="resumeForm" style="margin-top:20px;">
+        <input
+          type="file"
+          id="resumeFile"
+          accept=".pdf,.doc,.docx"
+          required
+          style="margin-bottom:14px;"
+        >
+
+        <button type="submit" class="btn-secondary">
+          Submit Resume
+        </button>
+      </form>
+
+      <p style="font-size:14px; margin-top:12px; opacity:0.8;">
+        PDF / DOC / DOCX • Max 2MB
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= JS ================= -->
+<script>
+/* =====================================================
+   AUTH CHECK
+===================================================== */
+const candidateData = JSON.parse(localStorage.getItem("sunrise_candidate"));
+
+if (!candidateData) {
+  alert("Please login first.");
+  window.location.href = "index.html";
+}
+
+/* =====================================================
+   WELCOME MESSAGE
+===================================================== */
+document.getElementById("welcomeText").innerText =
+  `Welcome, ${candidateData.name} 👋`;
+
+/* =====================================================
+   RESUME UPLOAD
+===================================================== */
+document.getElementById("resumeForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const file = document.getElementById("resumeFile").files[0];
+
+  if (!file) {
+    alert("Please select a resume file.");
+    return;
+  }
+
+  if (file.size > 2 * 1024 * 1024) {
+    alert("File size must be under 2MB.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+
+  reader.onload = () => {
+    const base64File = reader.result.split(",")[1];
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyqLdeMxw9Z5shNACX3F8WpPVqClTuBqAMMw3s7DT5cohjDqBy2ojx33rS_yjJjl_Lx/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: candidateData.name,
+          mobile: candidateData.mobile,
+          resumeName: file.name,
+          fileType: file.type,
+          file: base64File
+        })
+      }
+    );
+
+    alert(
+      "Resume submitted.\n\n" +
+      "If upload is successful, our team will contact you.\n" +
+      "If not, please try again later."
+    );
+  };
+});
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+document.getElementById("logoutBtn").addEventListener("click", e => {
+  e.preventDefault();
+  localStorage.removeItem("sunrise_candidate");
+  window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>
