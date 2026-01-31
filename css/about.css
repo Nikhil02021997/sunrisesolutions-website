@@ -1,0 +1,73 @@
+/* ABOUT PAGE ONLY */
+
+/* Intro grid */
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Images sizing */
+.about-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Trust cards */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.trust-card {
+  background: #ffffff;
+  padding: 24px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15,30,61,0.08);
+  border-bottom: 4px solid var(--accent-green);
+}
+
+.trust-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* Leadership */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.leadership-image img {
+  max-width: 300px;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Soft section bg */
+.section-soft {
+  background: #f1f5f9;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about-intro-grid,
+  .about-grid,
+  .leadership-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image img,
+  .leadership-image img {
+    margin: auto;
+  }
+}

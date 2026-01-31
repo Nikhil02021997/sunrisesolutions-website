@@ -1,15 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunrise Solutions | Recruitment Partner</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- BASE + HOME CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <style>
+    :root {
+      --accent-green: #b7e000; /* SAME GREEN USED ACROSS SITE */
+      --dark-text: #1c1c1c;
+    }
+
+    /* ================= TESTIMONIALS ================= */
+    .testimonials {
+      padding: 100px 0 70px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .testimonial-box {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      border-left: 5px solid var(--accent-green);
+      padding: 40px 50px;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      display: none;
+    }
+
+    .testimonial-box.active {
+      display: block;
+    }
+
+    .testimonial-stars {
+      color: var(--accent-green);
+      font-size: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 22px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+
+    .testimonial-role {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* ================= CTA ================= */
+    .home-cta {
+      padding: 80px 0;
+      background: #f6f8fb;
+      text-align: center;
+    }
+
+    .home-cta h2 {
+      margin-bottom: 10px;
+    }
+
+    .home-cta p {
+      margin-bottom: 26px;
+      color: #555;
+    }
+
+    .home-cta .btn-green {
+      background: var(--accent-green);
+      color: #1a1a1a;
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .home-cta .btn-green:hover {
+      background: #a6cf00;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 
 <body>
@@ -17,9 +102,8 @@
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container nav">
-
     <div class="logo">
-      <img src="images/logo/logo.png" alt="Sunrise Solutions">
+      <img src="images/logo/logo.png" alt="Sunrise Solutions Logo">
       <span>Sunrise Solutions</span>
     </div>
 
@@ -31,47 +115,35 @@
         <li><a href="industries.html">Industries</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#" id="loginBtn">Login</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
     </nav>
-
   </div>
 </header>
 
-<!-- ================= HERO SLIDER ================= -->
+<!-- ================= HERO ================= -->
 <section class="hero-slider">
+  <div class="container hero-grid-3">
 
-  <div class="slide active">
-    <div class="container hero-content">
-      <h1>Your Trusted Partner in Recruitment</h1>
-      <p>Ethical, reliable, and customized recruitment solutions across industries.</p>
-      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    <div class="hero-image">
+      <img src="images/hero/office_image.jpeg" alt="">
     </div>
-  </div>
 
-  <div class="slide">
-    <div class="container hero-content">
-      <h1>Right Talent. Right Role.</h1>
+    <div class="hero-content">
+      <h1>Right Talent.<br>Right Role.</h1>
       <p>Helping organizations build strong teams through long-term hiring partnerships.</p>
       <a href="services.html" class="btn-primary">Our Services</a>
     </div>
-  </div>
 
-  <div class="slide">
-    <div class="container hero-content">
-      <h1>30+ Years of HR Expertise</h1>
-      <p>Led by senior HR professionals delivering trusted recruitment outcomes.</p>
-      <a href="about.html" class="btn-primary">About Us</a>
+    <div class="hero-image">
+      <img src="images/hero/office_image2.jpeg" alt="">
     </div>
+
   </div>
-
-  <button class="slider-btn prev">‹</button>
-  <button class="slider-btn next">›</button>
-
 </section>
 
-<!-- ================= CLIENT LOGOS ================= -->
-<section class="section section-mid">
+<!-- ================= LOGOS ================= -->
+<section class="section-logos">
   <div class="container">
     <h2 style="text-align:center;margin-bottom:40px;">
       Trusted by Leading Organizations
@@ -79,21 +151,6 @@
 
     <div class="logo-slider">
       <div class="logo-track">
-
-        <img src="images/clients/aip.png" alt="AIP">
-        <img src="images/clients/Biomed.png" alt="Biomed">
-        <img src="images/clients/century.png" alt="Century">
-        <img src="images/clients/hmd best logo.png" alt="HMD">
-        <img src="images/clients/INDIAGLYCO.NS-725610ea.png" alt="India Glyco">
-        <img src="images/clients/KAIZEN FINAL LOGO big.png" alt="Kaizen">
-        <img src="images/clients/markexhaust.png" alt="Mark Exhaust">
-        <img src="images/clients/spark engineers.png" alt="Spark Engineers">
-        <img src="images/clients/starwire.png" alt="Star Wire">
-        <img src="images/clients/vidhyut control.png" alt="Vidhyut Control">
-        <img src="images/clients/yachiyo.png" alt="Yachiyo">
-        <img src="images/clients/yutaka.png" alt="Yutaka">
-
-        <!-- Duplicate for infinite loop -->
         <img src="images/clients/aip.png">
         <img src="images/clients/Biomed.png">
         <img src="images/clients/century.png">
@@ -104,77 +161,74 @@
         <img src="images/clients/starwire.png">
         <img src="images/clients/yachiyo.png">
         <img src="images/clients/yutaka.png">
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= LOGIN MODAL ================= -->
-<div id="loginModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:2000;">
-  <div class="container" style="max-width:420px; margin:120px auto;">
-    <div class="card" style="text-align:center;">
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials">
+  <div class="container">
 
-      <h2>Candidate Login</h2>
-      <p style="margin-bottom:20px;">
-        Login with your details to submit your resume.
+    <h2 style="margin-bottom:40px;">What Our Clients Say</h2>
+
+    <div class="testimonial-box active">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">
+        Sunrise Solutions acted like an internal hiring partner rather than an external agency.
+        Highly dependable recruitment support.
       </p>
-
-      <!-- ✅ Full Name + Mobile Number -->
-      <form id="loginForm">
-
-        <input
-          id="fullName"
-          type="text"
-          placeholder="Full Name"
-          required
-          style="margin-bottom:12px;"
-        >
-
-        <input
-          id="mobileNumber"
-          type="tel"
-          placeholder="Mobile Number"
-          required
-        >
-
-        <button type="submit" class="btn-secondary" style="margin-top:20px; width:100%;">
-          Continue
-        </button>
-
-      </form>
-
-      <p style="font-size:13px; margin-top:12px; opacity:0.8;">
-        Your details are safe and used only for recruitment.
-      </p>
-
-      <button
-        id="closeLogin"
-        style="margin-top:10px; background:none; color:#c7cbe3; border:none; cursor:pointer;"
-      >
-        Close
-      </button>
-
+      <div class="testimonial-author">Founder</div>
+      <div class="testimonial-role">Engineering Services Firm</div>
     </div>
+
+    <div class="testimonial-box">
+      <div class="testimonial-stars">★★★★☆</div>
+      <p class="testimonial-text">
+        Their ethical approach and deep understanding of our hiring needs helped us
+        close critical positions efficiently.
+      </p>
+      <div class="testimonial-author">HR Head</div>
+      <div class="testimonial-role">Manufacturing Organization</div>
+    </div>
+
+    <div class="testimonial-box">
+      <div class="testimonial-stars">★★★★½</div>
+      <p class="testimonial-text">
+        Transparent communication, quality screening, and a long-term hiring mindset.
+        Sunrise Solutions is a reliable recruitment partner.
+      </p>
+      <div class="testimonial-author">Operations Director</div>
+      <div class="testimonial-role">EPC Company</div>
+    </div>
+
   </div>
-</div>
+</section>
 
-<!-- ================= JS ================= -->
-<script src="js/main.js"></script>
+<!-- ================= FINAL CTA ================= -->
+<section class="home-cta">
+  <div class="container">
+    <h2>Looking for the Right Hiring Partner?</h2>
+    <p>Let Sunrise Solutions support your current and future talent needs.</p>
+    <a href="contact.html" class="btn-green">Contact Us</a>
+  </div>
+</section>
 
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2026 Sunrise Solutions | Faridabad, Haryana
+</footer>
+
+<!-- ================= TESTIMONIAL ROTATION ================= -->
 <script>
-  const loginBtn = document.getElementById("loginBtn");
-  const loginModal = document.getElementById("loginModal");
-  const closeLogin = document.getElementById("closeLogin");
+  const testimonials = document.querySelectorAll('.testimonial-box');
+  let current = 0;
 
-  loginBtn.addEventListener("click", e => {
-    e.preventDefault();
-    loginModal.style.display = "block";
-  });
-
-  closeLogin.addEventListener("click", () => {
-    loginModal.style.display = "none";
-  });
+  setInterval(() => {
+    testimonials[current].classList.remove('active');
+    current = (current + 1) % testimonials.length;
+    testimonials[current].classList.add('active');
+  }, 3000);
 </script>
 
 </body>
