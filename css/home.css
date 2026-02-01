@@ -1,0 +1,116 @@
+/* ================= HOME PAGE ================= */
+
+/* HERO */
+.hero-slider {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff, #eef2ff);
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  display: block;
+  position: relative;
+  opacity: 1;
+}
+
+.hero-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 22px;
+  color: #475569;
+}
+
+.hero-image img {
+  max-width: 280px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.22);
+}
+
+/* ================= CLIENT LOGOS ================= */
+
+.section-mid {
+  padding: 90px 0;
+  background: #ffffff; /* ✅ WHITE background as requested */
+}
+
+/* Container */
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track animation */
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: logo-scroll 25s linear infinite;
+}
+
+/* ✅ FIXED LOGOS (NO FADE) */
+.logo-track img {
+  height: 60px;
+  opacity: 1;              /* ❌ removed fade */
+  filter: none;            /* ❌ removed grayscale */
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* ✅ GREEN = INTERACTIVE */
+.logo-track img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(199, 224, 0, 0.6));
+}
+
+/* Smooth infinite loop */
+@keyframes logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .hero-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-image img {
+    max-width: 240px;
+    height: auto;
+    margin: auto;
+  }
+
+  .logo-track img {
+    height: 50px;
+  }
+}

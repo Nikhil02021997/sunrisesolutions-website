@@ -8,8 +8,60 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Global CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --accent-green: #b7e000;
+    }
+
+    .industry-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .industry-card {
+      background: #ffffff;
+      border-left: 5px solid var(--accent-green);
+      padding: 22px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .industry-card h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #1c1c1c;
+    }
+
+    .industry-card p {
+      font-size: 14.5px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .industry-cta {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .industry-cta a {
+      background: var(--accent-green);
+      color: #1a1a1a;
+      padding: 14px 36px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .industry-cta a:hover {
+      background: #a6cf00;
+    }
+  </style>
 </head>
 
 <body>
@@ -17,8 +69,6 @@
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container nav">
-
-    <!-- ✅ LOGO IMAGE + NAME (CONSISTENT) -->
     <div class="logo">
       <img src="images/logo/logo.png" alt="Sunrise Solutions">
       <span>Sunrise Solutions</span>
@@ -34,58 +84,100 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-
   </div>
 </header>
 
-<!-- ================= INDUSTRIES INTRO ================= -->
+<!-- ================= INTRO ================= -->
 <section class="section section-soft">
   <div class="container">
     <h2>Industries We Serve</h2>
     <p>
-      Sunrise Solutions partners with organizations across a wide range of industries,
-      delivering specialized and reliable recruitment solutions tailored to sector-specific
-      requirements.
+      Sunrise Solutions partners with organizations across diverse industries,
+      delivering specialized and reliable recruitment solutions aligned with sector-specific talent requirements.
+      Our deep understanding of industry dynamics, operational challenges, and skill demands enables us to identify 
+      and deliver candidates who contribute effectively from day one and support long-term organizational growth.
     </p>
   </div>
 </section>
 
-<!-- ================= INDUSTRIES GRID ================= -->
-<section class="section section-mid">
-  <div class="container">
-    <div class="grid">
-      <span>Automobile & Auto Components</span>
-      <span>Heavy Engineering & Manufacturing</span>
-      <span>Construction & Infrastructure</span>
-      <span>FMCG & Consumer Durables</span>
-      <span>Retail & E-commerce</span>
-      <span>Pharmaceutical & Healthcare</span>
-      <span>Electrical & Electronics</span>
-      <span>Steel, Power & Energy</span>
-      <span>EPC (Engineering, Procurement & Construction)</span>
-      <span>Fasteners & Steel</span>
-      <span>Tyre & Rubber Industries</span>
-      <span>Pipes & Infrastructure</span>
-    </div>
-  </div>
-</section>
+<!-- ================= INDUSTRY GRID ================= -->
+<section class="section">
+  <div class="container industry-list">
 
-<!-- ================= CTA ================= -->
-<section class="cta">
-  <div class="container">
+    <div class="industry-card">
+      <h3>Information Technology (IT)</h3>
+      <p>Software development, IT services, digital transformation, ERP, and technology-driven roles.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Automobile & Auto Components</h3>
+      <p>OEMs, Tier 1 & Tier 2 suppliers, production, quality, R&D, and plant operations.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Heavy Engineering & Manufacturing</h3>
+      <p>Industrial manufacturing, capital goods, machinery, and large-scale production units.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Construction & Infrastructure</h3>
+      <p>Infrastructure projects, civil engineering, real estate, and project execution roles.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>EPC (Engineering, Procurement & Construction)</h3>
+      <p>Power plants, oil & gas, industrial EPC, and large turnkey projects.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Power, Energy & Electrical</h3>
+      <p>Renewable energy, power generation, transmission, and electrical systems.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Pharmaceutical & Healthcare</h3>
+      <p>Pharma manufacturing, healthcare services, QA/QC, and regulatory roles.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>FMCG & Consumer Durables</h3>
+      <p>Sales, marketing, supply chain, manufacturing, and corporate functions.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Retail & E-Commerce</h3>
+      <p>Omnichannel retail, warehousing, logistics, and customer-facing roles.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Steel, Metals & Fasteners</h3>
+      <p>Steel plants, fabrication units, fastener manufacturing, and metal processing.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Tyre, Rubber & Polymer</h3>
+      <p>Tyre manufacturing, rubber processing, polymer plants, and operations.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Pipes & Infrastructure Products</h3>
+      <p>Pipes, fittings, construction materials, and infrastructure components.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="container industry-cta">
     <h2>Industry-Specific Hiring Experts</h2>
     <p>Connect with Sunrise Solutions for tailored recruitment solutions.</p>
-    <a href="contact.html" class="btn-secondary">Contact Us</a>
+    <a href="contact.html">Contact Us</a>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="container">
-    © 2026 Sunrise Solutions | Faridabad, Haryana
-  </div>
+  © 2026 Sunrise Solutions | Faridabad, Haryana
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Global CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,7 +17,6 @@
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container nav">
-
     <div class="logo">
       <img src="images/logo/logo.png" alt="Sunrise Solutions">
       <span>Sunrise Solutions</span>
@@ -33,101 +32,59 @@
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
-
   </div>
 </header>
 
-<!-- ================= CONTACT INTRO ================= -->
+<!-- ================= CONTACT INFO ================= -->
 <section class="section section-soft">
-  <div class="container">
-    <h2>Contact Us</h2>
+  <div class="container contact-box">
 
-    <p>
-      Get in touch with <strong>Sunrise Solutions</strong> for reliable, ethical,
-      and result-driven recruitment support. We partner with organizations to deliver
-      the right talent for long-term success.
+    <h2>Get in Touch</h2>
+    <p class="contact-intro">
+      Connect with Sunrise Solutions for ethical, reliable, and timely recruitment support.
+      We are happy to discuss your hiring needs.
     </p>
 
-    <p>
-      Our recruitment assignments are personally guided by
-      <strong>Mr. Rajesh Kumar Sharma</strong>, a senior HR professional with over
-      <strong>30 years of industry experience</strong> across manufacturing,
-      engineering, EPC, and corporate sectors.
-    </p>
-  </div>
-</section>
+    <div class="contact-details">
 
-<!-- ================= FOUNDER PROFILE ================= -->
-<section class="section section-mid">
-  <div class="container">
-
-    <div class="card" style="display:flex; gap:30px; align-items:flex-start;">
-
-      <img 
-        src="images/teams/rajesh-sharma.jpg" 
-        alt="Mr. Rajesh Kumar Sharma"
-        style="
-          width:160px;
-          height:auto;
-          border-radius:12px;
-          object-fit:contain;
-          background:#000;
-          padding:6px;
-        "
-      >
-
-      <div>
-        <h3>Mr. Rajesh Kumar Sharma</h3>
-        <p style="margin-bottom:12px; font-weight:500;">
-          Founder & Principal Recruitment Consultant
-        </p>
-
+      <div class="contact-card">
+        <h4>Office Address</h4>
         <p>
-          Mr. Rajesh Kumar Sharma is a seasoned HR professional with over
-          <strong>30 years of rich industry experience</strong>, having led
-          recruitment and manpower planning functions across diverse sectors.
-        </p>
-
-        <ul style="margin-top:12px;">
-          <li>30+ years of senior HR & leadership experience</li>
-          <li>Expertise in manpower planning & strategic hiring</li>
-          <li>Strong understanding of industrial & corporate ecosystems</li>
-          <li>Ethical, transparent, and consultative recruitment approach</li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CONTACT DETAILS ================= -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="cards">
-
-      <div class="card">
-        <h3>Office Address</h3>
-        <p>
-          B-207, 2nd Floor, Below Sky Patio,<br>
-          Puri Highstreet, Sector-81,<br>
+          B-207, 2nd Floor, Below Sky Patio<br>
+          Puri Highstreet, Sector-81<br>
           Faridabad, Haryana – 121004
         </p>
       </div>
 
-      <div class="card">
-        <h3>Phone</h3>
+      <div class="contact-card">
+        <h4>Call / WhatsApp</h4>
         <p>
-          +91 9711209997<br>
-          +91 9958111112
+          <a href="https://wa.me/919711209997" target="_blank" class="contact-link">
+            +91 9711209997
+          </a><br>
+          <a href="https://wa.me/919958111112" target="_blank" class="contact-link">
+            +91 9958111112
+          </a>
         </p>
       </div>
 
-      <div class="card">
-        <h3>Email</h3>
+      <div class="contact-card">
+        <h4>Email</h4>
         <p>
-          rksharma@sunrisesolutions.co.in<br>
-          sunrisesolutions1966@gmail.com
+          <a href="mailto:rksharma@sunrisesolutions.co.in" class="contact-link">
+            rksharma@sunrisesolutions.co.in
+          </a><br>
+          <a href="mailto:sunrisesolutions1966@gmail.com" class="contact-link">
+            sunrisesolutions1966@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h4>Business Hours</h4>
+        <p>
+          Monday – Saturday<br>
+          10:00 AM – 7:00 PM
         </p>
       </div>
 
@@ -135,51 +92,34 @@
   </div>
 </section>
 
-<!-- ================= CONTACT FORM ================= -->
-<section class="section section-mid">
-  <div class="container">
-    <h2>Send Us a Message</h2>
+<!-- ================= MESSAGE FORM (DOWNWARDS) ================= -->
+<section class="section">
+  <div class="container contact-form-wrapper">
 
-    <form>
-      <div class="cards">
+    <h2 class="form-title">Send Us a Message</h2>
 
-        <div class="card">
-          <input type="text" placeholder="Your Name" required>
-        </div>
-
-        <div class="card">
-          <input type="email" placeholder="Your Email" required>
-        </div>
-
-        <div class="card">
-          <input type="text" placeholder="Subject">
-        </div>
-
-        <div class="card">
-          <textarea rows="4" placeholder="Your Message" required></textarea>
-        </div>
-
+    <form class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
       </div>
 
-      <br>
-      <button type="submit" class="btn-secondary">Send Message</button>
+      <input type="text" placeholder="Subject" required>
+
+      <textarea rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit" class="btn-secondary">
+        Send Message
+      </button>
     </form>
+
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="container">
-    © 2026 Sunrise Solutions | Faridabad, Haryana
-  </div>
+  © 2026 Sunrise Solutions | Faridabad, Haryana
 </footer>
 
-<!-- ================= FLOATING CONTACT ================= -->
-<div class="floating-contact">
-  <a href="tel:+919711209997" aria-label="Call">📞</a>
-  <a href="https://wa.me/919711209997" target="_blank" aria-label="WhatsApp">💬</a>
-</div>
-
-<script src="js/main.js"></script>
 </body>
 </html>
