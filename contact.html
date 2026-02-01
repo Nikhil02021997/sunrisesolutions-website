@@ -5,16 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Sunrise Solutions</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Global CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container nav">
     <div class="logo">
@@ -35,14 +31,12 @@
   </div>
 </header>
 
-<!-- ================= CONTACT INFO ================= -->
 <section class="section section-soft">
-  <div class="container contact-box">
+  <div class="container">
 
     <h2>Get in Touch</h2>
     <p class="contact-intro">
-      Connect with Sunrise Solutions for ethical, reliable, and timely recruitment support.
-      We are happy to discuss your hiring needs.
+      Share your details and resume with us. Our recruitment team will connect with you shortly.
     </p>
 
     <div class="contact-details">
@@ -59,11 +53,11 @@
       <div class="contact-card">
         <h4>Call / WhatsApp</h4>
         <p>
-          <a href="https://wa.me/919711209997" target="_blank" class="contact-link">
-            +91 9711209997
+          <a class="contact-link" href="https://wa.me/919771209997" target="_blank">
+            +91 97712 09997
           </a><br>
-          <a href="https://wa.me/919958111112" target="_blank" class="contact-link">
-            +91 9958111112
+          <a class="contact-link" href="https://wa.me/919958111112" target="_blank">
+            +91 99581 11112
           </a>
         </p>
       </div>
@@ -71,10 +65,10 @@
       <div class="contact-card">
         <h4>Email</h4>
         <p>
-          <a href="mailto:rksharma@sunrisesolutions.co.in" class="contact-link">
+          <a class="contact-link" href="mailto:rksharma@sunrisesolutions.co.in">
             rksharma@sunrisesolutions.co.in
           </a><br>
-          <a href="mailto:sunrisesolutions1966@gmail.com" class="contact-link">
+          <a class="contact-link" href="mailto:sunrisesolutions1966@gmail.com">
             sunrisesolutions1966@gmail.com
           </a>
         </p>
@@ -92,34 +86,69 @@
   </div>
 </section>
 
-<!-- ================= MESSAGE FORM (DOWNWARDS) ================= -->
+<!-- MESSAGE FORM -->
 <section class="section">
   <div class="container contact-form-wrapper">
 
     <h2 class="form-title">Send Us a Message</h2>
 
-    <form class="contact-form">
+    <!-- ✅ FREE MAILTO FORM -->
+    <form class="contact-form" onsubmit="sendMail(event)">
+
       <div class="form-row">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
       </div>
 
-      <input type="text" placeholder="Subject" required>
+      <div class="form-row">
+        <input type="tel" id="phone" placeholder="Your Phone Number" required>
+        <input type="text" id="role" placeholder="Role Applying For">
+      </div>
 
-      <textarea rows="6" placeholder="Your Message" required></textarea>
+      <p style="font-size:14px;color:#475569;margin-bottom:12px;">
+        📎 Please attach your resume in the email that opens after clicking Send Message.
+      </p>
 
-      <button type="submit" class="btn-secondary">
+      <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+
+      <button type="submit" class="btn-primary">
         Send Message
       </button>
+
     </form>
 
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
   © 2026 Sunrise Solutions | Faridabad, Haryana
 </footer>
+
+<script>
+function sendMail(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const role = document.getElementById("role").value || "Not specified";
+  const message = document.getElementById("message").value || "";
+
+  alert("👍 Thank you for sharing your resume with Sunrise Solutions!\n\nYour email will open now. Please attach your resume and click Send.");
+
+  const subject = `Resume Submission - ${name}`;
+  const body =
+    `Name: ${name}%0D%0A` +
+    `Email: ${email}%0D%0A` +
+    `Phone: ${phone}%0D%0A` +
+    `Role: ${role}%0D%0A%0D%0A` +
+    `Message:%0D%0A${message}%0D%0A%0D%0A` +
+    `Please attach your resume with this email.`;
+
+  window.location.href =
+    `mailto:sunrisesolutions1966@gmail.com?subject=${subject}&body=${body}`;
+}
+</script>
 
 </body>
 </html>
